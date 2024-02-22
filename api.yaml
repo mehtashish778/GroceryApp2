@@ -1,0 +1,66 @@
+endpoints:
+  /api/product_category:
+    GET:
+      description: Retrieve all product categories
+      response: 
+        - id: integer
+        - name: string
+        - description: string
+      authentication: required (token)
+      authorization: required (admin)
+    POST:
+      description: Add a new product category
+      request:
+        - name: string
+        - description: string
+      authentication: required (token)
+      authorization: required (admin)
+    DELETE:
+      description: Delete a product category by ID
+      request:
+        - id: integer
+      authentication: required (token)
+      authorization: required (admin)
+    PUT:
+      description: Update a product category by ID
+      request:
+        - id: integer
+        - name: string
+        - description: string
+      authentication: required (token)
+      authorization: required (admin)
+
+  /api/product_item:
+    GET:
+      description: Retrieve all products
+      response:
+        - id: integer
+        - name: string
+        - description: string
+        - price: float
+        - stock: integer
+        - image_link: string
+        - category_id: integer
+    POST:
+      description: Add a new product
+      request:
+        - name: string
+        - description: string
+        - price: float
+        - stock: integer
+        - image_link: string
+        - category_id: integer
+    DELETE:
+      description: Delete a product by ID
+      request:
+        - id: integer
+    PUT:
+      description: Update a product by ID
+      request:
+        - id: integer
+        - name: string
+        - description: string
+        - price: float
+        - stock: integer
+        - image_link: string
+        - category_id: integer

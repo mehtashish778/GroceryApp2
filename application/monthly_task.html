@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Task</title>
+</head>
+<body>
+  <h1>Hello Customer,</h1>
+    <p>Here is your monthly Expenditure report:</p>
+    
+    <p>Total Expenditure: ${{ Total_Expenditure }}</p>
+
+  <h2>Products Purchased in the Last 30 Days:</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in Order_List %}
+                <tr>
+                    <td>{{ item.order_id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
